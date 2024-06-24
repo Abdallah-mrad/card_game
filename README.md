@@ -2,6 +2,7 @@ Introduction
 run these commands first :
 1 "git clone https://github.com/Abdallah-mrad/card_game.git"
 2 "composer install"
+3 under the public directory run "php -S localhost:5000"
 make sure you have at least PHP >= "8.2" and last version of composer
 This project is a PHP implementation of a card game using symfony "7.1" and PHP >= "8.2".
 It includes the creation and sorting of a deck of cards. The cards have different colors and values, and the deck can be sorted based on these properties.
@@ -68,4 +69,8 @@ The API will validate the input data and return a sorted deck of cards.
 # generate code coverage repport 
 juste run this commande "./vendor/bin/phpunit tests --coverage-html tests-result-coverage --coverage-filter classes"
 it will generate  a directory "tests-result-coverage" including code coverge repport in the "dashboard.html"
+
+
+NB you we only we can implement DTO for the future and swagger documentation
+
 
