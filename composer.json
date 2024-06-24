@@ -1,4 +1,6 @@
 {
+    "name": "card_game api",
+    "description": "une petite application qui va gérer deux api",
     "type": "project",
     "license": "proprietary",
     "minimum-stability": "stable",
