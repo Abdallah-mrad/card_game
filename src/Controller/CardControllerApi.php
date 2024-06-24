@@ -26,11 +26,7 @@ class CardControllerApi extends AbstractController
     public function getCards(): Response
     {
         $deck = $this->cardService->createDeckOfCards();
-        return new Response(
-            $this->json($deck),
-            Response::HTTP_OK,
-            ['Content-Type' => 'application/json']
-        );
+        return $this->json($deck,Response::HTTP_OK,['Content-Type' => 'application/json']);
     }
 
     #[Route('/sorted-deck',  methods: ['POST'])]
@@ -51,11 +47,7 @@ class CardControllerApi extends AbstractController
                 return $this->json(['errors' => $errors], Response::HTTP_BAD_REQUEST);
             }
             $sortedDeck = $this->cardService->SordtedDeckOfCards($cards);
-            return new Response(
-                $this->json($sortedDeck),
-                Response::HTTP_OK,
-                ['Content-Type' => 'application/json']
-            );
+            return $this->json($sortedDeck,Response::HTTP_OK,['Content-Type' => 'application/json']);
         }catch (\Exception $e) {
             // Handle the exception
             return $this->json(['message' => 'Bad request: ' . $e->getMessage()], Response::HTTP_INTERNAL_SERVER_ERROR);
